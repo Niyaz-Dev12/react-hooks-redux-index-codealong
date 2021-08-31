@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { todoAdded } from "./todosSlice";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { todoAdded } from './todosSlice';
 
 function CreateTodo() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const dispatch = useDispatch();
 
   function handleChange(event) {
@@ -13,6 +13,7 @@ function CreateTodo() {
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(todoAdded(text));
+    setText('');
   }
 
   return (
